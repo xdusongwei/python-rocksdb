@@ -1,5 +1,5 @@
 FROM python:3.8-buster
-ENV version=6.10.1
+ENV version 6.10.1
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y libgflags-dev libsnappy-dev zlib1g-dev \
     libbz2-dev liblz4-dev libzstd-dev unzip cmake g++ wget curl && rm -rf /var/lib/apt/lists/*
 RUN wget -O v${version}.tar.gz https://github.com/facebook/rocksdb/archive/v${version}.tar.gz && \
