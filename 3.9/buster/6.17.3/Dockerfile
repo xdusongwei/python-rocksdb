@@ -1,7 +1,7 @@
 FROM python:3.9-buster
 ENV version 6.17.3
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install -y libgflags-dev libsnappy-dev zlib1g-dev \
-    libbz2-dev liblz4-dev libzstd-dev unzip cmake g++ wget curl && rm -rf /var/lib/apt/lists/*
+    libbz2-dev liblz4-dev libzstd-dev libffi-dev unzip cmake g++ wget curl && rm -rf /var/lib/apt/lists/*
 RUN wget -O v${version}.tar.gz https://github.com/facebook/rocksdb/archive/v${version}.tar.gz && \
     tar -xf v${version}.tar.gz && \
     cd rocksdb-${version} && \
